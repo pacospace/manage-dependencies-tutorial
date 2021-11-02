@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproducibility of Jupyter Notebooks &#8212; Manage Dependencies Tutorial</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Start working on a new notebook" href="start-new-notebook.html" />
+    <link rel="prev" title="Setup initial environment" href="setup-initial-environment.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/aicoe-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Manage Dependencies Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Thoth Tutorial - manage your dependencies in Jupyter notebooks.
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Behind the Scenes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pre-requisite.html">
+   Pre-requisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="setup-initial-environment.html">
+   Setup initial environment
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Manage dependencies in Notebooks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Reproducibility of Jupyter Notebooks
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="start-new-notebook.html">
+     Start working on a new notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-missing-dependencies-notebook.html">
+     Bring your notebook and make it reproducible (Discover dependencies required automatically)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks/discover-my-notebook.html">
+     NOTEBOOK: Discover dependencies required automatically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convert-notebook.html">
+     Bring your notebook and make it reproducible (Convert cells with pip commands automatically)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks/make-notebook-reproducible.html">
+     NOTEBOOK: Convert cells with pip commands automatically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="run-reproducible-notebook.html">
+     Run reproducible notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="clean-kernel.html">
+     Remove kernel to clean environment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Contribute and save changes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="push-changes.html">
+   Push your changes on your GitHub repo
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Automate dependencies updated and releases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="thoth-aicoe-services.html">
+   Create a first release and image of your project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/source/manage-dependencies-notebook.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/AICoE/manage-dependencies-tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/AICoE/manage-dependencies-tutorial/issues/new?title=Issue%20on%20page%20%2Fdocs/source/manage-dependencies-notebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manage-dependencies-with-the-jupyterlab-requirements-extension">
+   Manage dependencies with the jupyterlab-requirements extension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#next-steps">
+   Next steps
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="reproducibility-of-jupyter-notebooks">
+<h1>Reproducibility of Jupyter Notebooks<a class="headerlink" href="#reproducibility-of-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<p>Reproducibility and shareability of notebooks is very important if you want to allow others to repeat your experiments and avoid issues due to dependencies management.
+When using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;package_name&gt;</span></code> is not possible to verify which software stack was used to run the notebook and therefore another user cannot repeat the same experiment.
+Dependency management is one of the most important requirements for reproducibility. Having dependencies clearly stated allows portability of notebooks, so they can be shared safely with others, reused in other projects or simply reproduced. If you want to know more about this issue in the data science domain, have a look at this <a class="reference external" href="https://developers.redhat.com/blog/2021/03/19/managing-python-dependencies-with-the-thoth-jupyterlab-extension/">article</a> or this <a class="reference external" href="https://www.youtube.com/watch?v=ifyQ2oSxjnU">video</a>.</p>
+<p>In order to help developers (including data scientists), dependencies for Jupyter notebooks in this tutorial are managed using the JupyterLab extension <a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements">jupyterlab-requirements</a>.</p>
+<p>You can use this extension for each of your notebook to guarantee they have the correct dependencies. This extension is able to add/remove dependencies, lock them and store them in the notebook metadata. In this way all the dependencies information required to repeat the environment are shipped with the notebook.</p>
+<p>In particular, the following notebook metadata is created for you, when you use Thoth’s dependency management tool:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements</span> <span class="pre">(Pipfile)</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements</span> <span class="pre">lock</span> <span class="pre">with</span> <span class="pre">all</span> <span class="pre">versions</span> <span class="pre">and</span> <span class="pre">hashes</span> <span class="pre">(Pipfile.lock)</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dependency</span> <span class="pre">resolution</span> <span class="pre">engine</span></code> used (Thoth or Pipenv);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.thoth.yaml</span> <span class="pre">configuration</span> <span class="pre">file</span></code> (only for Thoth resolution engine).</p></li>
+</ul>
+<p>All this information can allow reproducibility and shareability of the notebook.</p>
+<div class="section" id="manage-dependencies-with-the-jupyterlab-requirements-extension">
+<h2>Manage dependencies with the jupyterlab-requirements extension<a class="headerlink" href="#manage-dependencies-with-the-jupyterlab-requirements-extension" title="Permalink to this headline">¶</a></h2>
+<p>There are 3 ways to interact with <a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements">jupyterlab-requirements</a> JupyterLab extension:</p>
+<ul class="simple">
+<li><p>using <code class="docutils literal notranslate"><span class="pre">%horus</span></code> magic commands directly in your notebook’s cells (preferred approach). To learn more about how to use the <code class="docutils literal notranslate"><span class="pre">%horus</span></code> magic commands check out the guide <a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements#horus-magic-command">here</a> or the video <a class="reference external" href="https://www.youtube.com/watch?v=FjVxNTXO70I">here</a></p></li>
+</ul>
+<div style="text-align:center">
+<img alt="JupyterLab Requirements Horus magic commands" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/JupyterLabRequirementsExtensionMC.png">
+</div>
+<ul class="simple">
+<li><p>using the <code class="docutils literal notranslate"><span class="pre">horus</span></code> CLI directly from terminal or integrated in pipelines (check the <a class="reference external" href="https://www.youtube.com/watch?v=fW0YKugL26g&amp;t">video</a> or this <a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements#horus-jupyterlab-requirements-cli">link</a> if you want to know more about it).</p></li>
+</ul>
+<div style="text-align:center">
+<img alt="JupyterLab Requirements Horus CLI" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/JupyterLabRequirementsExtensionCLI.png">
+</div>
+<ul class="simple">
+<li><p>using the <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Dependencies</span></code> button that appears in the notebook when it is opened (check the <a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements#extension-button">link</a> if you want to know more about it):</p></li>
+</ul>
+<div style="text-align:center">
+<img alt="JupyterLab Requirements UI" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/JupyterLabRequirementsExtension.jpg">
+</div>
+<p>NOTE:<em>In this tutorial we will focus on %horus magic commands.</em></p>
+</div>
+<div class="section" id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+<p>You can consider the use case you are interested in for managing dependencies:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="start-new-notebook.html"><span class="doc std std-doc">start working on a new notebook</span></a></p></li>
+<li><p><a class="reference internal" href="add-missing-dependencies-notebook.html"><span class="doc std std-doc">create dependencies for your existing notebook</span></a></p></li>
+<li><p><a class="reference internal" href="convert-notebook.html"><span class="doc std std-doc">convert notebook that uses pip commands in cells</span></a></p></li>
+<li><p><a class="reference internal" href="run-reproducible-notebook.html"><span class="doc std std-doc">use a reproducible notebook</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/thoth-station/jupyterlab-requirements">jupyterlab-requirements</a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/source"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="setup-initial-environment.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Setup initial environment</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="start-new-notebook.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Start working on a new notebook</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Red Hat Artificial Intelligence Center of Excellence (AICoE)<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

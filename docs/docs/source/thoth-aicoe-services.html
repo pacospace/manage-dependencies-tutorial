@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a first release and image of your project &#8212; Manage Dependencies Tutorial</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Push your changes on your GitHub repo" href="push-changes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/aicoe-logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Manage Dependencies Tutorial</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   Thoth Tutorial - manage your dependencies in Jupyter notebooks.
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Behind the Scenes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pre-requisite.html">
+   Pre-requisites
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="setup-initial-environment.html">
+   Setup initial environment
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Manage dependencies in Notebooks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="manage-dependencies-notebook.html">
+   Reproducibility of Jupyter Notebooks
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="start-new-notebook.html">
+     Start working on a new notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="add-missing-dependencies-notebook.html">
+     Bring your notebook and make it reproducible (Discover dependencies required automatically)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks/discover-my-notebook.html">
+     NOTEBOOK: Discover dependencies required automatically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convert-notebook.html">
+     Bring your notebook and make it reproducible (Convert cells with pip commands automatically)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notebooks/make-notebook-reproducible.html">
+     NOTEBOOK: Convert cells with pip commands automatically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="run-reproducible-notebook.html">
+     Run reproducible notebook
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="clean-kernel.html">
+     Remove kernel to clean environment
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Contribute and save changes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="push-changes.html">
+   Push your changes on your GitHub repo
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Automate dependencies updated and releases
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Create a first release and image of your project
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/docs/source/thoth-aicoe-services.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/AICoE/manage-dependencies-tutorial"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/AICoE/manage-dependencies-tutorial/issues/new?title=Issue%20on%20page%20%2Fdocs/source/thoth-aicoe-services.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-thoth-bots">
+   Set up Thoth bots
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-khebut">
+     1. Install Khebut
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enable-issues-on-your-fork">
+     2. Enable issues on your fork
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-thoth-yaml">
+     3. Edit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .thoth.yaml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#push-changes-to-github">
+     4. Push changes to GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-aicoe-ci">
+   Set up AICoE CI
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-aicoe-ci">
+     1. Install AICOE CI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-robot-account">
+     2. Set up robot account
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quay">
+       Quay
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#login-into-your-container-registry-and-create-new-repository">
+     3. Login into your container registry and create new repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-name-of-the-repository-and-make-it-public">
+     4. Add the name of the repository and make it public
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-robot-permissions-for-your-repo">
+     5. Set robot permissions for your repo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#edit-aicoe-ci-yaml">
+     6. Edit
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .aicoe-ci.yaml
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     7. Push changes to GitHub
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-new-release">
+   Create new release
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dependencies-updates-in-the-repo">
+   Dependencies updates in the repo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="create-a-first-release-and-image-of-your-project">
+<h1>Create a first release and image of your project<a class="headerlink" href="#create-a-first-release-and-image-of-your-project" title="Permalink to this headline">¶</a></h1>
+<p>This section describes how the <a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE CI</a> and <a class="reference external" href="https://github.com/thoth-station">Thoth</a> bots can be used to maintain dependencies and create the images for your project.</p>
+<p>In particular:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE CI</a> is Continuous integration system used for running status checks on pull request, build releases, and python module releases.</p></li>
+<li><p><a class="reference external" href="https://github.com/thoth-station/kebechet">Kebechet Bot</a> is used to keep your dependencies fresh and up to date receiving recommendations and justifications using AI (Thoth service).</p></li>
+</ul>
+<p>These bots and pipelines exist to automate many of the manual GitOps tasks (e.g. in order to deploy your application, you may need to create a container image). <a class="reference external" href="https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates">GitHub templates</a> integrated with bots can provide you with automated pipelines triggered depending on what you need (e.g. release (patch, minor, major), deliver a container image, or update your dependencies).</p>
+<p>The next steps will teach you how to install and enable those tools and trigger them.</p>
+<div class="section" id="set-up-thoth-bots">
+<h2>Set up Thoth bots<a class="headerlink" href="#set-up-thoth-bots" title="Permalink to this headline">¶</a></h2>
+<p>Adding Thoth’s bots takes just a few steps!</p>
+<div class="section" id="install-khebut">
+<h3>1. Install Khebut<a class="headerlink" href="#install-khebut" title="Permalink to this headline">¶</a></h3>
+<p>Start by installing the Kebechet GitHub application, called Khebut by <a class="reference external" href="https://github.com/apps/khebhut">following this link</a>. It can be configured on an organization or on a single repository.</p>
+<p>Once the application is installed, you will need to add Thoth’s bot (Sesheta) as collaborator. Navigate to the repo where you intalled Khebut. Under the repository’s <strong>Settings</strong>, go to <strong>Manage Access</strong> and click on “Invite a collaborator” and add Thoth Bot Sesheta. Sesheta is a friendly Thoth bot who is used to help automate tasks. <a class="reference external" href="https://github.com/AICoE/aicoe-ci/issues/new?assignees=goern%2Charshad16&amp;labels=area%2Fcyborgs%2Cbot%2Csig%2Fcyborgs&amp;template=request_sesheta.yaml&amp;title=Help+with+Sesheta+invite">Follow this link</a> and fill out the form to have Sesheta accept your invitation. Please note: there is sometimes a delay in Sesheta’s invite acceptance.</p>
+<div style="text-align:center">
+<img alt="Invite Sesheta" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/SeshetaInvite.png">
+</div>
+</div>
+<div class="section" id="enable-issues-on-your-fork">
+<h3>2. Enable issues on your fork<a class="headerlink" href="#enable-issues-on-your-fork" title="Permalink to this headline">¶</a></h3>
+<p>Sesheta, the bot that will assist you in this tutorial, communicates through issues. On your fork, the issues tab may not be enabled automatically. In order to enable issues, go to the <strong>Settings</strong> tab and check the box next to “Issues”.</p>
+<div style="text-align:center">
+<img alt="Enable Fork Issues" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/SeshetaEnableForkIssues.png">
+</div>
+</div>
+<div class="section" id="edit-thoth-yaml">
+<h3>3. Edit <code class="docutils literal notranslate"><span class="pre">.thoth.yaml</span></code><a class="headerlink" href="#edit-thoth-yaml" title="Permalink to this headline">¶</a></h3>
+<p>Thoth services require a configuration file <a class="reference external" href="https://github.com/AICoE/manage-dependencies-tutorial/blob/master/.thoth.yaml">.thoth.yaml</a> at the root level of the project. This tutorial is based on <a class="reference external" href="https://github.com/aicoe-aiops/project-template">project-template</a>, therefore the .thoth.yaml is already present.</p>
+<p>In this tutorial, the file is already present, so you will not need to add it. To configure this on your own fork, you will need to update the Kebechet <a class="reference external" href="https://github.com/thoth-station/kebechet/tree/master/kebechet/managers">managers</a> section to include your GitHub username and push changes to your fork.
+Check <a class="reference internal" href="push-changes.html"><span class="doc std std-doc">push changes section</span></a> for more details.</p>
+<p>An example snippet of <code class="docutils literal notranslate"><span class="pre">.thoth.yaml</span></code> highlightling the changes to be made is shown below.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">khemenu.thoth-station.ninja</span>
+<span class="nt">tls_verify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">requirements_format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipenv</span>
+
+<span class="nt">runtime_environments</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tutorial</span>  <span class="c1"># runtime environment name</span>
+    <span class="nt">operating_system</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rhel</span>
+      <span class="nt">version</span><span class="p">:</span> <span class="s">&quot;8&quot;</span>
+    <span class="nt">python_version</span><span class="p">:</span> <span class="s">&quot;3.8&quot;</span>
+    <span class="nt">recommendation_type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+
+<span class="nt">managers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pipfile-requirements</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">update</span>
+    <span class="nt">configuration</span><span class="p">:</span>
+      <span class="nt">labels</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">bot</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">info</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">version</span>
+    <span class="nt">configuration</span><span class="p">:</span>
+      <span class="nt">maintainers</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pacospace</span> <span class="c1"># UPDATE TO HAVE YOUR OWN USERNAME</span>
+      <span class="nt">assignees</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sesheta</span>
+      <span class="nt">labels</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">bot</span><span class="p p-Indicator">]</span>
+      <span class="nt">changelog_file</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<p>To learn more about Thoth bots and services, please check out the guide <a class="reference external" href="https://github.com/AICoE/aicoe-ci#setting-aicoe-ci-on-github-organizationrepository">here</a>.</p>
+</div>
+<div class="section" id="push-changes-to-github">
+<h3>4. Push changes to GitHub<a class="headerlink" href="#push-changes-to-github" title="Permalink to this headline">¶</a></h3>
+<p>Once you modify the <code class="docutils literal notranslate"><span class="pre">.thoth.yaml</span></code> push the changes to your repo. Check <a class="reference internal" href="push-changes.html"><span class="doc std std-doc">push changes section</span></a> for more details.</p>
+</div>
+</div>
+<div class="section" id="set-up-aicoe-ci">
+<h2>Set up AICoE CI<a class="headerlink" href="#set-up-aicoe-ci" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE CI</a> can be set up in just a few steps.</p>
+<div class="section" id="install-aicoe-ci">
+<h3>1. Install AICOE CI<a class="headerlink" href="#install-aicoe-ci" title="Permalink to this headline">¶</a></h3>
+<p>Start by installing the AICoE CI GitHub application by <a class="reference external" href="https://github.com/apps/aicoe-ci">following this link</a>. When installing this application, select your profile for the organization, and specify the repository you are working on (e.g. <code class="docutils literal notranslate"><span class="pre">manage-dependencies-tutorial</span></code>).</p>
+</div>
+<div class="section" id="set-up-robot-account">
+<h3>2. Set up robot account<a class="headerlink" href="#set-up-robot-account" title="Permalink to this headline">¶</a></h3>
+<p>This step is required to create credentials for the aicoe-ci to push to your container registry (e.g. Quay).</p>
+<div class="section" id="quay">
+<h4>Quay<a class="headerlink" href="#quay" title="Permalink to this headline">¶</a></h4>
+<p>These steps are specific for users with Quay account and they will involve setting up a robot account on the image registry <a class="reference external" href="https://quay.io/">Quay.io</a>.</p>
+<p>First, you will need to create a robot in the organization or individual account. Under <strong>Account Settings</strong> on Quay, click on <strong>Robot Accounts</strong> tab, and “Create Robot Account” button. Enter a name for the account. The username will become namespace+accountname where namespace is the name of the user or organization.</p>
+<div style="text-align:center">
+<img alt="Create Robot Account" src="https://raw.githubusercontent.com/AICoE/aicoe-ci/master/docs/quay-robots.png">
+</div>
+<p>Once created, click on the robot account name. Find the “Docker Configuration” tab in the robot account popup, and copy the .json. Currently, you will have to pass it on by contacting us. You can reach us at <code class="docutils literal notranslate"><span class="pre">aicoe-thoth+devconf&#64;redhat.com</span></code>. Once the secret is passed, it is ready to be used in the <code class="docutils literal notranslate"><span class="pre">.aicoe-ci.yaml</span></code> file in the next step.</p>
+</div>
+</div>
+<div class="section" id="login-into-your-container-registry-and-create-new-repository">
+<h3>3. Login into your container registry and create new repository<a class="headerlink" href="#login-into-your-container-registry-and-create-new-repository" title="Permalink to this headline">¶</a></h3>
+<p>Click on <code class="docutils literal notranslate"><span class="pre">+</span> <span class="pre">Create</span> <span class="pre">New</span> <span class="pre">Repository</span></code> button on the upper left part:</p>
+<div style="text-align:center">
+<img alt="Create New Repository" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuayCreateNewRepository.png">
+</div>
+</div>
+<div class="section" id="add-the-name-of-the-repository-and-make-it-public">
+<h3>4. Add the name of the repository and make it public<a class="headerlink" href="#add-the-name-of-the-repository-and-make-it-public" title="Permalink to this headline">¶</a></h3>
+<div style="text-align:center">
+<img alt="Create Public Quay repository" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuaySetPublicRepository.png">
+</div>
+</div>
+<div class="section" id="set-robot-permissions-for-your-repo">
+<h3>5. Set robot permissions for your repo<a class="headerlink" href="#set-robot-permissions-for-your-repo" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Once the repository is created, go to <code class="docutils literal notranslate"><span class="pre">Setting</span></code>:</p></li>
+</ol>
+<div style="text-align:center">
+<img alt="Go to Setting for your Repo" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuayRepositorySettings.png">
+</div>
+<ol class="simple">
+<li><p>Under <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">and</span> <span class="pre">Robot</span> <span class="pre">Permissions</span></code> you can add the Robot Account created at point 2:</p></li>
+</ol>
+<div style="text-align:center">
+<img alt="Set Robot Account to your Repo" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuaySetRobotAccountRepository.png">
+</div>
+<ol class="simple">
+<li><p>Set Robot Permission to <code class="docutils literal notranslate"><span class="pre">Write</span></code>:</p></li>
+</ol>
+<div style="text-align:center">
+<img alt="Set Robot Permission to Write to your Repo" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuaySetRobotPermissionsWriteRepository.png">
+</div>
+<ol class="simple">
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Permission</span></code>:</p></li>
+</ol>
+<div style="text-align:center">
+<img alt="Add Permission for the Robot Account" src="https://raw.githubusercontent.com/aicoe/manage-dependencies-tutorial/master/docs/images/QuayAddRobotPermissionsRepository.png">
+</div>
+<p>Now everything is set on your container registry and the AICoE-CI will be able to push to your container image in your registry. Last step will be configuring the AICOE-CI to know where to push.</p>
+</div>
+<div class="section" id="edit-aicoe-ci-yaml">
+<h3>6. Edit <code class="docutils literal notranslate"><span class="pre">.aicoe-ci.yaml</span></code><a class="headerlink" href="#edit-aicoe-ci-yaml" title="Permalink to this headline">¶</a></h3>
+<p>The last step is to edit the <a class="reference external" href="https://github.com/AICoE/aicoe-ci#aicoe-ci-configuration-file">aicoe-ci configuration file</a>. This tutorial is based on <a class="reference external" href="https://github.com/aicoe-aiops/project-template">project-template</a>, therefore the .thoth.yaml is already present. The <code class="docutils literal notranslate"><span class="pre">.aicoe-ci.yaml</span></code> configuration file allows user to assign details about the build requirements and specify base image and registry details for build and push. For the purpose of this tutorial, the <a class="reference external" href="https://github.com/AICoE/manage-dependencies-tutorial/blob/master/.aicoe-ci.yaml">.aicoe-ci.yaml</a> file is already present. However, you may need to edit some of the fields for your personal access, namely <code class="docutils literal notranslate"><span class="pre">registry-org</span></code>, <code class="docutils literal notranslate"><span class="pre">registry-project</span></code>, and <code class="docutils literal notranslate"><span class="pre">registry-secret</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">check</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[]</span> <span class="c1"># Enable checks for your repo (pre-commit, build, pytest)</span>
+<span class="nt">build</span><span class="p">:</span>
+  <span class="nt">base-image</span><span class="p">:</span> <span class="s">&quot;quay.io/thoth-station/s2i-elyra-custom-notebook:v0.3.3&quot;</span>
+  <span class="nt">build-source-script</span><span class="p">:</span> <span class="s">&quot;image:///opt/app-root/builder&quot;</span>
+  <span class="nt">custom-tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+  <span class="nt">build-stratergy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Source</span> <span class="c1"># Allowed values: Source, Dockerfile, Containerfile</span>
+  <span class="nt">registry</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">quay.io</span> <span class="c1"># Image registry to be used. (default: quay.io)</span>
+  <span class="nt">registry-org</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">thoth-station</span> <span class="c1"># Organization in Image Registry. (default: thoth-station)</span>
+  <span class="nt">registry-project</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">manage-dependencies-tutorial</span> <span class="c1"># project repository in Image Registry (ie, Quay) used to push image (created in point 3.).</span>
+  <span class="nt">registry-secret</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">thoth-station-thoth-pusher-secret</span> <span class="c1"># comes from robot account (created in point 2.)</span>
+</pre></div>
+</div>
+<p>For more detailed information on the config file and robot accounts, visit the <a class="reference external" href="https://github.com/AICoE/aicoe-ci#configuring-build-requirements">AICoE CI documentation</a>.</p>
+</div>
+<div class="section" id="id1">
+<h3>7. Push changes to GitHub<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Once you modify the <code class="docutils literal notranslate"><span class="pre">.aicoe-ci.yaml</span></code> push the changes to your repo. Check <a class="reference internal" href="push-changes.html"><span class="doc std std-doc">push changes section</span></a> for more details.</p>
+</div>
+</div>
+<div class="section" id="create-new-release">
+<h2>Create new release<a class="headerlink" href="#create-new-release" title="Permalink to this headline">¶</a></h2>
+<p>Now that everything is set you can create new images. Some of the pipelines used in the Thoth project are maintained by bots. Therefore you can simply open an issue asking for a release from the repo you maintain (e.g patch, minor, major) and the bots will handle your request. Once the request is completed, the bot will also automatically close the issue, as you can see from the images below:</p>
+<div style="text-align:center">
+<img alt="Open Issue Release" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/KhebutOpenIssueRelease.png">
+</div>
+<div style="text-align:center">
+<img alt="Pull Request Release" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/KhebutPullRequestRelease.png">
+</div>
+<p>Fun fact, the <code class="docutils literal notranslate"><span class="pre">CHANGELOG</span></code> in the release is also created using an AI model that clusters pull requests. You can find more information about this model in our <a class="reference external" href="https://github.com/thoth-station/glyph">glyph</a> project.</p>
+<p>Once the issue is closed by the bot, a new tag is created in the GitHub repo. This in turn triggers the Tekton pipelines in AICoE CI to start the build process and push the image on the registry according to the configuration defined in the <a class="reference external" href="https://github.com/AICoE/manage-dependencies-tutorial/blob/master/.aicoe-ci.yaml">aicoe-ci.yaml</a>.</p>
+<p>Once the image has been created by the Tekton pipelines, you can find it in your registry (e.g. Quay):</p>
+<div style="text-align:center">
+<img alt="Image on Registry" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/QuayImageRegistry.png">
+</div>
+</div>
+<div class="section" id="dependencies-updates-in-the-repo">
+<h2>Dependencies updates in the repo<a class="headerlink" href="#dependencies-updates-in-the-repo" title="Permalink to this headline">¶</a></h2>
+<p>Once you install Khebut in your repo, you can benefit from different <a class="reference external" href="https://github.com/thoth-station/kebechet#kebechet">services</a> just setting correctly the <code class="docutils literal notranslate"><span class="pre">.thoth.yaml</span></code> configuration file.</p>
+<p>Thoth bots regularly checks if your project is using the optimal set of dependencies in terms of CVE vulnerabilities, newer package releases, and performance changes. If it finds that the dependencies can be updated, it automatically opens a PR on your repo to make the required updates!</p>
+<p>An example of the Khebut bot in action can be seen below.</p>
+<div style="text-align:center">
+<img alt="Khebut Automatic Update" src="https://raw.githubusercontent.com/AICoE/manage-dependencies-tutorial/master/docs/images/KhebutAutomaticUpdate.png">
+</div>
+<p>Congratulations!! You successfully concluded this tutorial.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/AICoE/aicoe-ci">AICoE CI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AICoE/aicoe-ci#setting-aicoe-ci-on-github-organizationrepository">Setting AICoE CI on a GitHub repo/org</a></p></li>
+<li><p><a class="reference external" href="https://github.com/thoth-station/glyph">Project Glyph</a></p></li>
+<li><p><a class="reference external" href="https://github.com/thoth-station/kebechet">Kebechet Bot</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AICoE/aicoe-ci/blob/master/docs/thoth-bots-setup.md#instructions-to-setup-bots-and-ci-services">Bots and CI Services Setup Instructions</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AICoE/meteor">Project Meteor</a></p></li>
+<li><p><a class="reference external" href="https://www.operate-first.cloud/">Operate First</a></p></li>
+<li><p><a class="reference external" href="https://github.com/aicoe-aiops/project-template">project-template</a></p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs/source"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="push-changes.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Push your changes on your GitHub repo</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Red Hat Artificial Intelligence Center of Excellence (AICoE)<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
